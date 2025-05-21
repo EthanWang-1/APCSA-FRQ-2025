@@ -1,12 +1,13 @@
 public ArrayList<Match> buildMatches(){
-  int num = 0;
   ArrayList<Match> result = new ArrayList<Match>();
   int size = competitorList.size();
-  if(size%2 == 1){
-    num=1;
-  }
-  for(int i =0; (i<size) && ((i+num)<(size-i);i++){
-   result.add(competitorList.get(i+num), competitorList.get(size-1));
+  if(size%2 == 0){
+    for(int i = 0; i < size/2; i++){
+      result.add(competitorList.get(i), competitorList.get(i + (size/2));
+  } else {
+     for(int i = 1; i < size/2; i++){
+       result.add(competitorList.get(i), competitorList.get(i + (size/2));
+      }
   }
   return result;
 }
